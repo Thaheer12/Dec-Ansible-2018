@@ -1,0 +1,8 @@
+---
+ - hosts: Local
+   become: True
+   tasks:
+     - name: Installing git on Ubuntu
+       apt:
+         name: git
+         state: present
