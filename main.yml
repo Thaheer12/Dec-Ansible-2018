@@ -1,0 +1,6 @@
+---
+ - hosts: redhat ubuntu
+   become: true
+   tasks:
+     - include: debian.yml
+     - include: redhat1.yml

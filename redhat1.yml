@@ -1,0 +1,6 @@
+---
+ - name: Installing httpd on Redhat
+   yum:
+     name: httpd
+     state: present
+   when: ansible_os_family == "RedHat" 
