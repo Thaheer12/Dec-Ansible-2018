@@ -1,0 +1,6 @@
+--- 
+ - hosts: redhat
+   become: true
+   tasks:
+     - name: pulling docker image in redhat
+       shell: docker pull tomcat:8 

@@ -1,5 +1,5 @@
 ---
- - hosts: redhat
+ - hosts: all
    become: true
    tasks:
      - name: Installing Packages on Redhat
@@ -10,7 +10,14 @@
          - git
          - docker
          - httpd
-         - java-1.8.0-openjdk-devel 
+         - java-1.8.0-openjdk-devel
+       tags:
+         - task-1
+     - name: 
+       debug:
+         msg: "Task-1 completed"
+       tags:
+         - task-2
      - name: Starting docker and apache
        service: 
          name: "{{item}}"
@@ -19,6 +26,8 @@
        with_items:
          - httpd
          - docker
+       tags:
+         - task-3
      - name: Updating java version
        alternatives:
          name: java
